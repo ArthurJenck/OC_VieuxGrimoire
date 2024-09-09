@@ -1,0 +1,14 @@
+{
+  "name": "mon-vieux-grimoire-backend",
+  "version": "1.0.0",
+  "description": "Back-end du site Mon Vieux Grimoire",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arthur Jenck <arthurjenckdev@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2"
+  }
+}
