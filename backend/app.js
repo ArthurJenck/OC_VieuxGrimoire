@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const booksRoutes = require('./routes/books');
 const userRoutes = require('./routes/users');
 
+// Connexion à la base de données MongoDB
 mongoose
   .connect(
     'mongodb+srv://ArthurJenck:mdp@cluster0.d0vqy.mongodb.net/VieuxGrimoire?retryWrites=true&w=majority&appName=Cluster0'
@@ -15,6 +16,7 @@ mongoose
 
 const app = express();
 
+// Règles pour outrepasser la politique de CORS de Chrome
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
