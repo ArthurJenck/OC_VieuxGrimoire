@@ -3,7 +3,6 @@ const fs = require('fs');
 
 exports.addBook = (req, res, next) => {
   const bookObj = JSON.parse(req.body.book);
-
   delete bookObj._id;
   delete bookObj._userId;
 
@@ -69,4 +68,27 @@ exports.getBestRatings = (req, res, next) => {
       res.status(200).json(sortedBooks);
     })
     .catch((error) => res.status(400).json({ error }));
+};
+
+exports.addRating = (req, res, next) => {
+  const newRating = req.body;
+  Book.findOne({ _id: req.params.id }).then((book) => {
+    book.ratings.push({
+      userId: req.body.userId,
+      grade: req.body.rating,
+      _id: req.params.id,
+    });
+    let sommeRatings = 0;
+    for (let i = 0; i < book.ratings.length; i++) {
+      sommeRatings += book.ratings[i].grade;
+    }
+    book.averageRating = sommeRatings / book.ratings.length;
+
+    book
+      .save()
+      .then((book) => res.status(200).json(book))
+      .catch((error) => {
+        res.status(400).json({ error });
+      });
+  });
 };
