@@ -2,15 +2,14 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const env = require('./env.json');
 
 const booksRoutes = require('./routes/books');
 const userRoutes = require('./routes/users');
 
 // Connexion à la base de données MongoDB
 mongoose
-  .connect(
-    'mongodb+srv://ArthurJenck:mdp@cluster0.d0vqy.mongodb.net/VieuxGrimoire?retryWrites=true&w=majority&appName=Cluster0'
-  )
+  .connect(env.URL_DTB)
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 

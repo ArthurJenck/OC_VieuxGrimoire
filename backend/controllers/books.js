@@ -29,7 +29,13 @@ exports.addBook = (req, res, next) => {
 // Modification d'un livre existant
 exports.updateBook = (req, res, next) => {
   // Destructuration de la request pour remplir les champs de l'objet
-  Book.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+  const updateContent = { ...req.body, _id: req.params.id };
+  if (req.file) {
+    updateContent.imageUrl = `${req.protocol}://${req.get('host')}/images/${
+      req.file.filename
+    }`;
+  }
+  Book.updateOne({ _id: req.params.id }, updateContent)
     .then(() => {
       res.status(200).json({ message: 'Objet modifié' });
     })

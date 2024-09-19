@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
-const BookSchema = mongoose.Schema({
+const bookSchema = mongoose.Schema({
   title: { type: String, required: true, unique: true },
   author: { type: String, required: true },
   year: { type: Number, required: true },
@@ -18,6 +18,6 @@ const BookSchema = mongoose.Schema({
 });
 
 // Vérification que les champs uniques à l'aide du plugin mongoose-unique-validator
-userSchema.plugin(uniqueValidator);
+bookSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('Book', bookSchema);
