@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAuthenticatedUser, getBestRatedBooks } from './common';
 
-// eslint-disable-next-line import/prefer-default-export
 export function useUser() {
   const [connectedUser, setConnectedUser] = useState(null);
   const [auth, setAuth] = useState(false);
