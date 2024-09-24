@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import SignIn from './pages/SignIn/SignIn';
 import Home from './pages/Home/Home';
 import Book from './pages/Book/Book';
@@ -19,7 +19,7 @@ function App() {
     setUser(connectedUser);
   }, [connectedUser]);
   return (
-    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/OC_VieuxGrimoire/'}>
+    <HashRouter>
       <div>
         <ScrollToTop />
         <Header user={user} setUser={setUser} />
@@ -35,7 +35,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
