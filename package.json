@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "set PORT=5678 && react-scripts start",
-    "build": "npm install --prefix client && npm run build --prefix client",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
