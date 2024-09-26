@@ -20,6 +20,7 @@ Placez-vous dans le dossier backend avec `cd .\backend\`, puis lancez le serveur
 
 Sécurisation de l'URL de la base de données à l'aide d'un fichier env.json placé dans le .gitignore (exceptionnellement ajouté sur une branche séparé pour pouvoir tester l'application)  
 Début de recréation du code front-end sans les différentes erreurs et imprécisions (en cours)
+Apprentissage de Vercel pour obtenir un hébergement de l'API (en cours)
 
 ### Dates du projet
 
