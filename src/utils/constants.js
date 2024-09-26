@@ -1,5 +1,4 @@
-const API_URL =
-  'https://vercel-demo-cwcuzlkr4-arthur-jenck-projects.vercel.app/';
+const API_URL = 'https://vercel-demo-eosin-one.vercel.app';
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/api/auth/signup`,
   SIGN_IN: `${API_URL}/api/auth/login`,
