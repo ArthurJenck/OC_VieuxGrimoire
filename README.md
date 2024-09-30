@@ -25,7 +25,8 @@ Apprentissage de Vercel pour obtenir un hébergement de l'API (en cours)
 ### Dates du projet
 
 Apprentissage des cours liés au projet débuté le 20 août 2024  
-Projet pratique débuté le 30 août 2024
+Projet pratique débuté le 30 août 2024  
+Terminé le 30 septembre 2024.
 
 ### Auteur
 
